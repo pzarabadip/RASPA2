@@ -6716,6 +6716,7 @@ REAL PotentialValue(int typeA,int typeB,REAL rr,REAL scaling)
       arg6=PotentialParms[typeA][typeB][5];
       arg7=PotentialParms[typeA][typeB][6];
       r=sqrt(rr);
+      if(r<1.8) return 1.0e15;   //Added to avoid collapse to -Inf at low distance
       rri2=1.0/rr;
       rri4=SQR(rri2);
       rri6=rri4*rri2;
